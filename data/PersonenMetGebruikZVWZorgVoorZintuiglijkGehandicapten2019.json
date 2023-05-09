@@ -1,0 +1,117 @@
+{
+  "id": "d1",
+  "name": "(2019) Gebruik Zvw-zorg voor zintuiglijk gehandicapten 2019",
+  "link": "https://mlzopendata.cbs.nl/#/MLZ/nl/dataset/40054NED/table?dl=77D22",
+  "disability": "visual impairment",
+  "series": [
+    {
+      "age_start": 18,
+      "age_end": 34,
+      "gender": "male",
+      "proportion": 0.05
+    },
+    {
+      "age_start": 35,
+      "age_end": 49,
+      "gender": "male",
+      "proportion": 0.06
+    },
+    {
+      "age_start": 50,
+      "age_end": 64,
+      "gender": "male",
+      "proportion": 0.12
+    },
+    {
+      "age_start": 65,
+      "age_end": 69,
+      "gender": "male",
+      "proportion": 0.15
+    },
+    {
+      "age_start": 70,
+      "age_end": 74,
+      "gender": "male",
+      "proportion": 0.17
+    },
+    {
+      "age_start": 75,
+      "age_end": 79,
+      "gender": "male",
+      "proportion": 0.24
+    },
+    {
+      "age_start": 80,
+      "age_end": 84,
+      "gender": "male",
+      "proportion": 0.38
+    },
+    {
+      "age_start": 85,
+      "age_end": 89,
+      "gender": "male",
+      "proportion": 0.60
+    },
+    {
+      "age_start": 90,
+      "age_end": 100,
+      "gender": "male",
+      "proportion": 0.76
+    },
+
+    {
+      "age_start": 18,
+      "age_end": 34,
+      "gender": "female",
+      "proportion": 0.05
+    },
+    {
+      "age_start": 35,
+      "age_end": 49,
+      "gender": "female",
+      "proportion": 0.07
+    },
+    {
+      "age_start": 50,
+      "age_end": 64,
+      "gender": "female",
+      "proportion": 0.12
+    },
+    {
+      "age_start": 65,
+      "age_end": 69,
+      "gender": "female",
+      "proportion": 0.14
+    },
+    {
+      "age_start": 70,
+      "age_end": 74,
+      "gender": "female",
+      "proportion": 0.17
+    },
+    {
+      "age_start": 75,
+      "age_end": 79,
+      "gender": "female",
+      "proportion": 0.26
+    },
+    {
+      "age_start": 80,
+      "age_end": 84,
+      "gender": "female",
+      "proportion": 0.43
+    },
+    {
+      "age_start": 85,
+      "age_end": 89,
+      "gender": "female",
+      "proportion": 0.68
+    },
+    {
+      "age_start": 90,
+      "age_end": 100,
+      "gender": "female",
+      "proportion": 0.74
+    }
+  ]
+}

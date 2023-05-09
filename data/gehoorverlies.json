@@ -1,0 +1,141 @@
+{
+  "id": "horen1",
+  "name": "(2020) prevelentie beperkend gehoorverlies",
+  "link": "https://open.overheid.nl/documenten/ronl-4ed4f1bf-dfb6-4ba7-bd63-713b7a7ff496/pdf",
+  "disability": "auditory impairment",
+  "series": [
+    {
+      "age_start": 40,
+      "age_end": 44,
+      "gender": "male",
+      "proportion": 25
+    },
+    {
+      "age_start": 45,
+      "age_end": 49,
+      "gender": "male",
+      "proportion": 14
+    },
+    {
+      "age_start": 50,
+      "age_end": 54,
+      "gender": "male",
+      "proportion": 11
+    },
+    {
+      "age_start": 55,
+      "age_end": 59,
+      "gender": "male",
+      "proportion": 40
+    },
+    {
+      "age_start": 60,
+      "age_end": 64,
+      "gender": "male",
+      "proportion": 56
+    },
+    {
+      "age_start": 65,
+      "age_end": 69,
+      "gender": "male",
+      "proportion": 129
+    },
+    {
+      "age_start": 70,
+      "age_end": 74,
+      "gender": "male",
+      "proportion": 242
+    },
+    {
+      "age_start": 75,
+      "age_end": 79,
+      "gender": "male",
+      "proportion": 405
+    },
+    {
+      "age_start": 80,
+      "age_end": 84,
+      "gender": "male",
+      "proportion": 558
+    },
+    {
+      "age_start": 85,
+      "age_end": 89,
+      "gender": "male",
+      "proportion": 720
+    },
+    {
+      "age_start": 90,
+      "age_end": 100,
+      "gender": "male",
+      "proportion": 938
+    },
+
+    {
+      "age_start": 40,
+      "age_end": 44,
+      "gender": "female",
+      "proportion": 8
+    },
+    {
+      "age_start": 45,
+      "age_end": 49,
+      "gender": "female",
+      "proportion": 3
+    },
+    {
+      "age_start": 50,
+      "age_end": 54,
+      "gender": "female",
+      "proportion": 12
+    },
+    {
+      "age_start": 55,
+      "age_end": 59,
+      "gender": "female",
+      "proportion": 15
+    },
+    {
+      "age_start": 60,
+      "age_end": 64,
+      "gender": "female",
+      "proportion": 54
+    },
+    {
+      "age_start": 65,
+      "age_end": 69,
+      "gender": "female",
+      "proportion": 110
+    },
+    {
+      "age_start": 70,
+      "age_end": 74,
+      "gender": "female",
+      "proportion": 206
+    },
+    {
+      "age_start": 75,
+      "age_end": 79,
+      "gender": "female",
+      "proportion": 301
+    },
+    {
+      "age_start": 80,
+      "age_end": 84,
+      "gender": "female",
+      "proportion": 491
+    },
+    {
+      "age_start": 85,
+      "age_end": 89,
+      "gender": "female",
+      "proportion": 659
+    },
+    {
+      "age_start": 90,
+      "age_end": 100,
+      "gender": "female",
+      "proportion": 900
+    }
+  ]
+}
