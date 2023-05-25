@@ -3,6 +3,15 @@ import json
 import matplotlib.pyplot as plt
 
 from domain import dataset as d
+from os import walk
+
+def get_all_datasets() -> list[d.ThesisDataset]:
+    filenames = next(walk("data"), (None, None, []))[2]  # [] if no file
+    datasets = []
+    for file in filenames:
+        datasets.append(get_dataset(("data/" + file)))
+
+    return datasets
 
 
 def get_dataset(file_path: str) -> d.ThesisDataset:
@@ -53,8 +62,13 @@ def get_delta_of_prediction(male_prediction: float, female_prediction: float, ma
     return [male_delta, female_delta]
 
 
-def analyze_dataset(file_path: str):
-    dataset: d.ThesisDataset = get_dataset(file_path)
+def analyze_dataset(file_path: str = None, predefined_dataset: d.ThesisDataset = None):
+    dataset: d.ThesisDataset
+    if predefined_dataset:
+        dataset = predefined_dataset
+    else:
+        dataset = get_dataset(file_path)
+
     instructions = dataset.get_instructions()
     results: list = []
     for instruction in instructions:
@@ -160,11 +174,59 @@ def plot_graph_from_gender(results, gender, dataset_name='unknown dataset'):
     plt.show()
 
 
+def assert_input(input_text) -> bool:
+    if input_text == "Y" or input_text == "y" or input_text == "yes":
+        return True
+
+    if input_text == "N" or input_text == "n" or input_text == "no":
+        return True
+
+    return assert_input(input("Please answer with 'Y' or 'N': "))
+
+# def get_all_impairment_names():
+
+
+def perform_experiment():
+    use_all_datasets = assert_input(input("Would you like to use all datasets in the data directory?\n(Y/N)?: "))
+
+    impairments = []
+    datasets = get_all_datasets()
+
+    if use_all_datasets:
+        for dataset in datasets:
+            analyze_dataset(predefined_dataset=dataset)
+        return
+
+    for dataset in datasets:
+        if dataset.disability not in impairments:
+            impairments.append(dataset.disability)
+
+    wanted_impairments = []
+    for index, impairment in enumerate(impairments):
+        if assert_input(input(f"Use datasets for disability {impairment}?\n(Y/N)?: ")):
+            wanted_impairments.append(impairment)
+
+    if len(wanted_impairments) == 0:
+        raise "no impairments were selected"
+
+    for impairment in wanted_impairments:
+        for dataset in datasets:
+            if dataset.disability == impairment:
+                analyze_dataset(predefined_dataset=dataset)
+
+
 if __name__ == '__main__':
-    analyze_dataset("data/visueleBeperkingenEnEenDemografischeVerkenning2005.json")
-    analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2019.json")
-    analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2018.json")
-    analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2017.json")
-    analyze_dataset("data/gehoorverlies.json")
+    if assert_input(input("Perform experiment?\n(Y/N)?: ")):
+        perform_experiment()
+        print("------------------\nEND OF EXPERIMENT\n------------------")
+
+    if assert_input(input("Use demographic model?\n(Y/N)?: ")):
+        raise "not implemented"
+
+    # analyze_dataset("data/visueleBeperkingenEnEenDemografischeVerkenning2005.json")
+    # analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2019.json")
+    # analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2018.json")
+    # analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2017.json")
+    # analyze_dataset("data/gehoorverlies.json")
 
     # analyze_dataset("data/dataset3.json")
