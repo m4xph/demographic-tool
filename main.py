@@ -2,9 +2,10 @@ import json
 
 import matplotlib.pyplot as plt
 
-from domain import dataset as d
-from os import walk
+from dataset import dataset as d
+from model import model
 
+from os import walk
 def get_all_datasets() -> list[d.ThesisDataset]:
     filenames = next(walk("data"), (None, None, []))[2]  # [] if no file
     datasets = []
@@ -179,16 +180,13 @@ def assert_input(input_text) -> bool:
         return True
 
     if input_text == "N" or input_text == "n" or input_text == "no":
-        return True
+        return False
 
     return assert_input(input("Please answer with 'Y' or 'N': "))
-
-# def get_all_impairment_names():
 
 
 def perform_experiment():
     use_all_datasets = assert_input(input("Would you like to use all datasets in the data directory?\n(Y/N)?: "))
-
     impairments = []
     datasets = get_all_datasets()
 
@@ -221,7 +219,8 @@ if __name__ == '__main__':
         print("------------------\nEND OF EXPERIMENT\n------------------")
 
     if assert_input(input("Use demographic model?\n(Y/N)?: ")):
-        raise "not implemented"
+        model.init_model()
+        # raise "not implemented"
 
     # analyze_dataset("data/visueleBeperkingenEnEenDemografischeVerkenning2005.json")
     # analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2019.json")

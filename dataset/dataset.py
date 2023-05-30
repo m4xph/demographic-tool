@@ -8,10 +8,15 @@ class ThesisDataset:
 
     series: list[dict]
 
+    fixed_dict: dict = None
 
-    def __init__(self, dataset_id, name, disability, series, fixed_male_average, fixed_female_average) -> None:
+
+    def __init__(self, dataset_id, name, disability, series, fixed_dict = None) -> None:
         self.id, self.name, self.disability = dataset_id, name, disability
         self.series: list[dict] = []
+
+        if fixed_dict is not None:
+            self.fixed_dict = fixed_dict
         for item in series:
             self.series.append(dict(item))
 
@@ -47,7 +52,6 @@ class ThesisDataset:
         age_range = range(age_start, age_end + 1)  # + 1 because range skips the last integer
         proportions: list[float] = []
 
-        # print(len(age_range))
         for item in self.series:
             for age in age_range:
                 if item['age_start'] <= age <= item['age_end']\
