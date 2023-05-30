@@ -1,8 +1,8 @@
 {
-  "link": "https://www.similarweb.com/blog/research/market-research/website-demographics/",
   "entries": [
     {
       "sector": "ecommerce",
+      "source": "https://www.similarweb.com/blog/research/market-research/website-demographics/",
 
       "male_proportion": 56,
       "female_proportion": 44,

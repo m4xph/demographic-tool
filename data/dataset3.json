@@ -4,14 +4,13 @@
   "link": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/81173ned/table?dl=6B768",
   "disability": "visual impairment",
 
-  "fixed": [
+  "fixed":
     {
       "gender": {
         "male": 2.7,
         "female": 3.1
       }
-    }
-  ],
+    },
 
   "series": [
     {

@@ -1,9 +1,10 @@
 from dataset import dataset
 from helper import dataset_functions, prediction_functions
+from statistics import mean
 
 default_datasets = {
     # "visual impairment": "",
-    "auditory impairment": "data/gehoorverlies.json",
+    "visual impairment": "data/dataset3.json",
     # "illiteracy": ""
 }
 
@@ -25,18 +26,45 @@ def init_model():
     use_default = assert_input(input("Would you like to use default datasets?\n(Y/N)?: "), True)
 
     datasets: list[dataset.ThesisDataset] = []
+
     if use_default:
         for key, value in default_datasets.items():
             datasets.append(dataset_functions.get_dataset(value))
 
     industries = dataset_functions.get_industry_demographics()
 
-    for industry in industries:
-        for serie in industry['series']:
-            get_prediction_from_dataset(datasets[0], serie['age_start'], serie['age_end'])
+    for ds in datasets:
+        for industry in industries['entries']:
+            pred = get_prediction_from_industry(industry, ds)
+            print(f"[{industry['sector']}] Estimated proportion for disability {ds.disability}: {pred}")
+
+
+def get_prediction_from_industry(industry_config: dict, ds: dataset.ThesisDataset) -> float:
+    # print(industry_config)
+    male_prop = industry_config['male_proportion']
+    female_prop = industry_config['female_proportion']
+    series = industry_config['series']
+
+    prediction_list: list[float] = []
+    for serie in series:
+        age_range = [serie['age_start'], serie['age_end']]
+
+        male_pred, female_pred = get_prediction_from_dataset(ds, age_range)
+
+        male_count = male_prop + age_range[1] - age_range[0]
+        female_count = female_prop + age_range[1] - age_range[0]
+
+        for _ in range(male_count):
+            prediction_list.append(male_pred)
+        for _ in range(female_count):
+            prediction_list.append(female_pred)
+
+    return mean(prediction_list)
+
 
 
 def get_prediction_from_dataset(ds: dataset.ThesisDataset, age_range: list[int]) -> list[float]:
+    # print(ds.fixed_dict)
     if ds.fixed_dict is not None:
         male_fixed_proportion = ds.fixed_dict['gender']['male']
         female_fixed_proportion = ds.fixed_dict['gender']['female']
