@@ -48,6 +48,7 @@
 
     {
       "sector": "Arts & Entertainment",
+      "source": "https://www.similarweb.com/blog/research/market-research/website-demographics/",
 
       "male_proportion": 59,
       "female_proportion": 41,
@@ -94,6 +95,7 @@
 
     {
       "sector": "Business & Consumer services",
+      "source": "https://www.similarweb.com/blog/research/market-research/website-demographics/",
 
       "male_proportion": 50,
       "female_proportion": 50,
@@ -140,6 +142,7 @@
 
     {
       "sector": "News & Media",
+      "source": "https://www.similarweb.com/blog/research/market-research/website-demographics/",
 
       "male_proportion": 57,
       "female_proportion": 43,
@@ -179,6 +182,91 @@
           "age_start": 65,
           "age_end": 100,
           "proportion": 6
+        }
+      ]
+    },
+
+    {
+      "sector": "Construction & Infrastructure",
+
+      "male_proportion": 85,
+      "female_proportion": 15,
+
+      "series": [
+        {
+          "age_start": 15,
+          "age_end": 24,
+          "proportion": 17
+        },
+
+        {
+          "age_start": 25,
+          "age_end": 34,
+          "proportion": 29
+        },
+
+        {
+          "age_start": 35,
+          "age_end": 44,
+          "proportion": 21
+        },
+
+        {
+          "age_start": 45,
+          "age_end": 54,
+          "proportion": 17
+        },
+
+        {
+          "age_start": 55,
+          "age_end": 64,
+          "proportion": 12
+        },
+
+        {
+          "age_start": 65,
+          "age_end": 100,
+          "proportion": 3
+        }
+      ]
+    },
+
+    {
+      "sector": "Gaming",
+      "source": "https://www.isfe.eu/data-key-facts/key-facts-from-2021-europe-video-games-sector/#responsiblegameplay",
+
+      "male_proportion": 52,
+      "female_proportion": 48,
+
+      "series": [
+        {
+          "age_start": 6,
+          "age_end": 14,
+          "proportion": 17
+        },
+
+        {
+          "age_start": 15,
+          "age_end": 24,
+          "proportion": 22
+        },
+
+        {
+          "age_start": 25,
+          "age_end": 34,
+          "proportion": 20
+        },
+
+        {
+          "age_start": 35,
+          "age_end": 44,
+          "proportion": 16
+        },
+
+        {
+          "age_start": 45,
+          "age_end": 64,
+          "proportion": 24
         }
       ]
     }

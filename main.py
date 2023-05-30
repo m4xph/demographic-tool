@@ -7,10 +7,10 @@ from model import model
 
 from os import walk
 def get_all_datasets() -> list[d.ThesisDataset]:
-    filenames = next(walk("data"), (None, None, []))[2]  # [] if no file
+    filenames = next(walk("data/datasets/"), (None, None, []))[2]  # [] if no file
     datasets = []
     for file in filenames:
-        datasets.append(get_dataset(("data/" + file)))
+        datasets.append(get_dataset(("data/datasets/" + file)))
 
     return datasets
 
@@ -18,7 +18,7 @@ def get_all_datasets() -> list[d.ThesisDataset]:
 def get_dataset(file_path: str) -> d.ThesisDataset:
     with open(file_path, 'r') as f:
         data = json.load(f)
-        return d.ThesisDataset(data['id'], data['name'], data['disability'], data['series'], data.get('fixed_male_average'), data.get('fixed_female_average'))
+        return d.ThesisDataset(data['id'], data['name'], data['disability'], data['series'], data.get('fixed'))
 
 
 def get_prediction_by_average_of_dimensions(dataset: d.ThesisDataset, age_start: int, age_end: int):
@@ -214,18 +214,17 @@ def perform_experiment():
 
 
 if __name__ == '__main__':
+    if assert_input(input("Use demographic model?\n(Y/N)?: ")):
+        model.init_model()
+
     if assert_input(input("Perform experiment?\n(Y/N)?: ")):
         perform_experiment()
         print("------------------\nEND OF EXPERIMENT\n------------------")
-
-    if assert_input(input("Use demographic model?\n(Y/N)?: ")):
-        model.init_model()
-        # raise "not implemented"
 
     # analyze_dataset("data/visueleBeperkingenEnEenDemografischeVerkenning2005.json")
     # analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2019.json")
     # analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2018.json")
     # analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2017.json")
-    # analyze_dataset("data/gehoorverlies.json")
+    # analyze_dataset("data/(ai) (2020) prevelentie beperkend gehoorverlies in Nederland.json")
 
-    # analyze_dataset("data/dataset3.json")
+    # analyze_dataset("data/(vi) (2013) Gezondheid, aandoeningen, beperkingen; persoonskenmerken, 2010-2013.json")

@@ -2,7 +2,7 @@
   "id": "d3",
   "name": "Gezondheid, aandoeningen, beperkingen; persoonskenmerken, 2010-2013",
   "link": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/81173ned/table?dl=6B768",
-  "disability": "visual impairment",
+  "disability": "auditory impairment",
 
   "fixed":
     {
@@ -21,42 +21,42 @@
     {
       "age_start": 16,
       "age_end": 19,
-      "proportion": 2.2
+      "proportion": 0.6
     },
     {
       "age_start": 20,
       "age_end": 29,
-      "proportion": 2.2
+      "proportion": 1.1
     },
     {
       "age_start": 30,
       "age_end": 39,
-      "proportion": 2.2
+      "proportion": 1.5
     },
     {
       "age_start": 40,
       "age_end": 49,
-      "proportion": 2.2
+      "proportion": 2.0
     },
     {
       "age_start": 50,
       "age_end": 54,
-      "proportion": 2.2
+      "proportion": 3.3
     },
     {
       "age_start": 55,
       "age_end": 64,
-      "proportion": 2.2
+      "proportion": 4.1
     },
     {
       "age_start": 65,
       "age_end": 74,
-      "proportion": 2.2
+      "proportion": 3.5
     },
     {
       "age_start": 75,
       "age_end": 100,
-      "proportion": 2.2
+      "proportion": 9.8
     }
   ]
 }

@@ -10,7 +10,7 @@ def get_all_datasets() -> list[d.ThesisDataset]:
     filenames = next(walk("data"), (None, None, []))[2]  # [] if no file
     datasets = []
     for file in filenames:
-        datasets.append(get_dataset(("data/" + file)))
+        datasets.append(get_dataset(("data/datasets" + file)))
 
     return datasets
 
