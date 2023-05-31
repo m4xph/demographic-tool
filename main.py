@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 from dataset import dataset as d
 from model import model
+from industry import industry
 
 from os import walk
 def get_all_datasets() -> list[d.ThesisDataset]:
@@ -214,6 +215,8 @@ def perform_experiment():
 
 
 if __name__ == '__main__':
+
+    industry.visualize_industry_demographics()
     if assert_input(input("Use demographic model?\n(Y/N)?: ")):
         model.init_model()
 

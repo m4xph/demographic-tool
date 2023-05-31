@@ -1,0 +1,42 @@
+{
+  "id": "illiteracy-oecd-2019",
+  "name": "PIACC OECD Data 2018",
+  "link": "https://gpseducation.oecd.org/IndicatorExplorer?plotter=h5&query=0&indicators=P001*P002*P003*P004*P005*P006*P007*P008*P009*P010*P012*P013*P014*P015*P016*Q001*Q002*Q003*Q004*Q005*Q006*Q007*Q008*Q009*Q010*Q011*Q012*Q013*Q014*Q015*Q016*Q017*Q018*Q019*Q020*Q021*Q022*Q023*Q024*Q025*Q026*Q027*Q054*Q055*Q056*Q057*Q058*Q059*Q060*Q061*Q062",
+  "disability": "illiteracy",
+
+  "fixed":
+    {
+      "gender": {
+        "male": 41.0,
+        "female": 35.2
+      }
+    },
+
+  "series": [
+    {
+      "age_start": 16,
+      "age_end": 24,
+      "proportion": 30.7
+    },
+    {
+      "age_start": 25,
+      "age_end": 34,
+      "proportion": 26.6
+    },
+    {
+      "age_start": 35,
+      "age_end": 44,
+      "proportion": 29.8
+    },
+    {
+      "age_start": 45,
+      "age_end": 54,
+      "proportion": 42.6
+    },
+    {
+      "age_start": 55,
+      "age_end": 65,
+      "proportion": 59.1
+    }
+  ]
+}

@@ -5,7 +5,7 @@ from statistics import mean
 default_datasets = {
     "visual impairment": "data/datasets/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2019.json",
     "auditory impairment": "data/datasets/(vi) (2013) Gezondheid, aandoeningen, beperkingen; persoonskenmerken, 2010-2013.json",
-    # "illiteracy": ""
+    "illiteracy": "data/datasets/(il) OECD Data.json"
 }
 
 def assert_input(input_text, default_return = None) -> bool:
@@ -21,7 +21,8 @@ def assert_input(input_text, default_return = None) -> bool:
     return assert_input(input("Please answer with 'Y' or 'N': "))
 
 def init_model():
-    use_default = assert_input(input("Would you like to use default datasets?\n(Y/N)?: "), True)
+    use_default = assert_input(input("Would you like to use default datasets?\n(Y/n)?: "), True)
+    print_warnings = assert_input(input("Would you like to use print warnings?\n(Y/n)?: "), True)
 
     datasets: list[dataset.ThesisDataset] = []
 
@@ -34,12 +35,12 @@ def init_model():
     for ds in datasets:
         print(f"Disability: {ds.disability}\nDataset: {ds.name}\n")
         for industry in industries['entries']:
-            pred = get_prediction_from_industry(industry, ds)
+            pred = get_prediction_from_industry(industry, ds, print_warnings)
             print(f"[{industry['sector']}] Estimated proportion for disability {ds.disability}: {pred}")
         print("\n\n")
 
 
-def get_prediction_from_industry(industry_config: dict, ds: dataset.ThesisDataset) -> float:
+def get_prediction_from_industry(industry_config: dict, ds: dataset.ThesisDataset, print_warnings=True) -> float:
     male_prop = industry_config['male_proportion']
     female_prop = industry_config['female_proportion']
     series = industry_config['series']
@@ -48,20 +49,22 @@ def get_prediction_from_industry(industry_config: dict, ds: dataset.ThesisDatase
     for serie in series:
         age_range = [serie['age_start'], serie['age_end']]
 
-        try:
-            male_pred, female_pred = get_prediction_from_dataset(ds, age_range)
-        except:
-            print(f"    [warning] Could not get data for age-range {age_range} in this dataset\n"
-                  f"     age range is left out of calculations:")
-            continue
+        for age in range(age_range[0], age_range[1]):
+            # print(age)
+            try:
+                # print('trying')
+                male_pred, female_pred = get_prediction_from_dataset(ds, [age,age])
 
-        male_count = male_prop * (age_range[1] - age_range[0])
-        female_count = female_prop * (age_range[1] - age_range[0])
-
-        for _ in range(male_count):
-            prediction_list.append(male_pred)
-        for _ in range(female_count):
-            prediction_list.append(female_pred)
+                for _ in range(male_prop):
+                    prediction_list.append(male_pred)
+                for _ in range(female_prop):
+                    prediction_list.append(female_pred)
+            except:
+                if print_warnings:
+                    print(
+                        f"    [warning] For industry {industry_config['sector']}: Could not get data for age {age} in this dataset.\n"
+                        f"              This age is left out of calculations.")
+                continue
 
     return mean(prediction_list)
 

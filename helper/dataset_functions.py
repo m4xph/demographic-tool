@@ -22,5 +22,5 @@ def get_dataset(file_path: str) -> d.ThesisDataset:
 
 
 def get_industry_demographics() -> dict:
-    with open("data/demographic_entries.json", 'r') as f:
+    with open("data/industry_demographics.json", 'r') as f:
         return json.load(f)
