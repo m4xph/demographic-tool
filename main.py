@@ -216,18 +216,15 @@ def perform_experiment():
 
 if __name__ == '__main__':
 
-    industry.visualize_industry_demographics()
     if assert_input(input("Use demographic model?\n(Y/N)?: ")):
         model.init_model()
+        print("-------------------------\nEND OF DEMOGRAPHIC MODEL\n-------------------------")
+
+
+    if assert_input(input("Visualize industry demographicst?\n(Y/N)?: ")):
+        industry.visualize_industry_demographics()
+        print("--------------------\nEND OF VISUALIZATION\n--------------------")
 
     if assert_input(input("Perform experiment?\n(Y/N)?: ")):
         perform_experiment()
         print("------------------\nEND OF EXPERIMENT\n------------------")
-
-    # analyze_dataset("data/visueleBeperkingenEnEenDemografischeVerkenning2005.json")
-    # analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2019.json")
-    # analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2018.json")
-    # analyze_dataset("data/PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2017.json")
-    # analyze_dataset("data/(ai) (2020) prevelentie beperkend gehoorverlies in Nederland.json")
-
-    # analyze_dataset("data/(vi) (2013) Gezondheid, aandoeningen, beperkingen; persoonskenmerken, 2010-2013.json")
