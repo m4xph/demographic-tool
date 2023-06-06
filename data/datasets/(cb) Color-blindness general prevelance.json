@@ -1,0 +1,13 @@
+{
+  "id": "color-blindness",
+  "name": "General color blindness prevalence",
+  "link": "",
+  "disability": "color-blindness",
+
+  "fixed": {
+    "gender": {
+      "male": 8,
+      "female": 0.5
+    }
+  }
+}

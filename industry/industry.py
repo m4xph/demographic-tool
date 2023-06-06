@@ -18,7 +18,6 @@ def visualize_industry_demographics():
 
     industry_config = get_industry_demographics()
 
-
     for entry in industry_config['entries']:
         age_ranges = []
         weight_counts = {
@@ -35,18 +34,9 @@ def visualize_industry_demographics():
             age_ranges.append(f"{[serie['age_start'], serie['age_end']]}")
             weight_counts["male"].append(serie['proportion'] * (male_prop / (male_prop + female_prop)))
             weight_counts["female"].append(serie['proportion'] * (female_prop / (male_prop + female_prop)))
-    #
-        # weight_counts = {
-        #     "male": np.array(weight_counts["male"]),
-        #     "female": np.array(weight_counts["female"]),
-        # }
-        # print(industry_name)
-        # print(age_ranges)
-        print(f"wc", weight_counts)
 
 
         width = 0.5
-
         fig, ax = plt.subplots()
         bottom = np.zeros(len(entry['series']))
 

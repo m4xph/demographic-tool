@@ -40,7 +40,7 @@
 
         {
           "age_start": 65,
-          "age_end": 100,
+          "age_end": 75,
           "proportion": 5
         }
       ]
@@ -86,7 +86,7 @@
 
         {
           "age_start": 65,
-          "age_end": 100,
+          "age_end": 75,
           "proportion": 4
         }
       ]
@@ -133,7 +133,7 @@
 
         {
           "age_start": 65,
-          "age_end": 100,
+          "age_end": 75,
           "proportion": 6
         }
       ]
@@ -180,7 +180,7 @@
 
         {
           "age_start": 65,
-          "age_end": 100,
+          "age_end": 75,
           "proportion": 6
         }
       ]
@@ -225,7 +225,7 @@
 
         {
           "age_start": 65,
-          "age_end": 100,
+          "age_end": 75,
           "proportion": 3
         }
       ]

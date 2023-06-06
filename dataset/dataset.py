@@ -1,4 +1,5 @@
 from statistics import mean
+from typing import Union
 
 
 class ThesisDataset:
@@ -6,19 +7,24 @@ class ThesisDataset:
     name: str
     disability: str
 
-    series: list[dict]
+    series: Union[list[dict], None]
 
     fixed_dict: dict = None
 
 
-    def __init__(self, dataset_id, name, disability, series, fixed_dict = None) -> None:
+    def __init__(self, dataset_id, name, disability, series = None, fixed_dict = None) -> None:
         self.id, self.name, self.disability = dataset_id, name, disability
-        self.series: list[dict] = []
+
 
         if fixed_dict is not None:
             self.fixed_dict = fixed_dict
-        for item in series:
-            self.series.append(dict(item))
+
+        if series is not None:
+            self.series: list[dict] = []
+            for item in series:
+                self.series.append(dict(item))
+        else:
+            self.series = None
 
 
     def average_by_gender(self, gender: str) -> float:

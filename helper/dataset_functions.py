@@ -18,7 +18,7 @@ def get_all_datasets() -> list[d.ThesisDataset]:
 def get_dataset(file_path: str) -> d.ThesisDataset:
     with open(file_path, 'r') as f:
         data = json.load(f)
-        return d.ThesisDataset(data['id'], data['name'], data['disability'], data['series'], data.get('fixed'))
+        return d.ThesisDataset(data['id'], data['name'], data['disability'], data.get('series'), data.get('fixed'))
 
 
 def get_industry_demographics() -> dict:
