@@ -1,6 +1,6 @@
 {
-  "id": "d2",
-  "name": "(2005) Demografische verkenning",
+  "id": "rec_d2",
+  "name": "rec_(2005) Demografische verkenning",
   "link": "https://www.zonmw.nl/uploads/tx_vipublicaties/Onderzoeksrapport_dr._Limburg_epidemiologie_van_visuele_beperkingen_en_een_demografische_verkenning.pdf",
   "disability": "visual impairment",
   "series": [
@@ -8,38 +8,38 @@
       "age_start": 0,
       "age_end": 14,
       "gender": "male",
-      "proportion": 0.07
+      "proportion": 0.038
     },
     {
       "age_start": 15,
       "age_end": 49,
       "gender": "male",
-      "proportion": 0.13
+      "proportion": 0.081
     },
     {
       "age_start": 50,
       "age_end": 100,
       "gender": "male",
-      "proportion": 1.90
+      "proportion": 1.942
     },
 
     {
       "age_start": 0,
       "age_end": 14,
       "gender": "female",
-      "proportion": 0.05
+      "proportion": 0.082
     },
     {
       "age_start": 15,
       "age_end": 49,
       "gender": "female",
-      "proportion": 0.13
+      "proportion": 0.179
     },
     {
       "age_start": 50,
       "age_end": 100,
       "gender": "female",
-      "proportion": 4.30
+      "proportion": 4.258
     }
   ]
 }

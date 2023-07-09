@@ -1,117 +1,142 @@
 {
-  "id": "d4",
-  "name": "(2018) Gebruik Zvw-zorg voor zintuiglijk gehandicapten 2018",
-  "link": "https://mlzopendata.cbs.nl/#/MLZ/nl/dataset/40054NED/table?dl=77D22",
-  "disability": "visual impairment",
+  "id": "rec_horen1",
+  "name": "rec_(2020) Prevelentie beperkend gehoorverlies in Nederland",
+  "link": "https://open.overheid.nl/documenten/ronl-4ed4f1bf-dfb6-4ba7-bd63-713b7a7ff496/pdf",
+  "disability": "auditory impairment",
+
   "series": [
     {
-      "age_start": 18,
-      "age_end": 34,
+      "age_start": 40,
+      "age_end": 44,
       "gender": "male",
-      "proportion": 0.05
+      "proportion": 1.733
     },
     {
-      "age_start": 35,
+      "age_start": 45,
       "age_end": 49,
       "gender": "male",
-      "proportion": 0.06
+      "proportion": 0.893
     },
     {
       "age_start": 50,
+      "age_end": 54,
+      "gender": "male",
+      "proportion": 1.208
+    },
+    {
+      "age_start": 55,
+      "age_end": 59,
+      "gender": "male",
+      "proportion": 2.889
+    },
+    {
+      "age_start": 60,
       "age_end": 64,
       "gender": "male",
-      "proportion": 0.11
+      "proportion": 5.777
     },
     {
       "age_start": 65,
       "age_end": 69,
       "gender": "male",
-      "proportion": 0.13
+      "proportion": 12.552
     },
     {
       "age_start": 70,
       "age_end": 74,
       "gender": "male",
-      "proportion": 0.17
+      "proportion": 23.529
     },
     {
       "age_start": 75,
       "age_end": 79,
       "gender": "male",
-      "proportion": 0.24
+      "proportion": 37.078
     },
     {
       "age_start": 80,
       "age_end": 84,
       "gender": "male",
-      "proportion": 0.36
+      "proportion": 55.093
     },
     {
       "age_start": 85,
       "age_end": 89,
       "gender": "male",
-      "proportion": 0.57
+      "proportion": 72.424
     },
     {
       "age_start": 90,
       "age_end": 100,
       "gender": "male",
-      "proportion": 0.76
+      "proportion": 96.53
     },
 
     {
-      "age_start": 18,
-      "age_end": 34,
+      "age_start": 40,
+      "age_end": 44,
       "gender": "female",
-      "proportion": 0.05
+      "proportion": 1.567
     },
     {
-      "age_start": 35,
+      "age_start": 45,
       "age_end": 49,
       "gender": "female",
-      "proportion": 0.06
+      "proportion": 0.807
     },
     {
       "age_start": 50,
+      "age_end": 54,
+      "gender": "female",
+      "proportion": 1.092
+    },
+    {
+      "age_start": 55,
+      "age_end": 59,
+      "gender": "female",
+      "proportion": 2.611
+    },
+    {
+      "age_start": 60,
       "age_end": 64,
       "gender": "female",
-      "proportion": 0.11
+      "proportion": 5.222
     },
     {
       "age_start": 65,
       "age_end": 69,
       "gender": "female",
-      "proportion": 0.13
+      "proportion": 11.348
     },
     {
       "age_start": 70,
       "age_end": 74,
       "gender": "female",
-      "proportion": 0.16
+      "proportion": 21.271
     },
     {
       "age_start": 75,
       "age_end": 79,
       "gender": "female",
-      "proportion": 0.24
+      "proportion": 33.522
     },
     {
       "age_start": 80,
       "age_end": 84,
       "gender": "female",
-      "proportion": 0.40
+      "proportion": 49.807
     },
     {
       "age_start": 85,
       "age_end": 89,
       "gender": "female",
-      "proportion": 0.63
+      "proportion": 65.476
     },
     {
       "age_start": 90,
       "age_end": 100,
       "gender": "female",
-      "proportion": 0.72
+      "proportion": 87.27
     }
   ]
 }

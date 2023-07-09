@@ -5,13 +5,16 @@ import matplotlib.pyplot as plt
 from dataset import dataset as d
 from model import model
 from industry import industry
+import datetime
 
 from os import walk
 def get_all_datasets() -> list[d.ThesisDataset]:
+    experiment_file_names = ["PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2019.json", "PersonenMetGebruikZVWZorgVoorZintuiglijkGehandicapten2018.json", "visueleBeperkingenEnEenDemografischeVerkenning2005.json", "(ai) (2020) prevelentie beperkend gehoorverlies in Nederland.json"]
     filenames = next(walk("data/datasets/"), (None, None, []))[2]  # [] if no file
     datasets = []
     for file in filenames:
-        datasets.append(get_dataset(("data/datasets/" + file)))
+        if file in experiment_file_names:
+            datasets.append(get_dataset(("data/datasets/" + file)))
 
     return datasets
 
@@ -84,15 +87,16 @@ def analyze_dataset(file_path: str = None, predefined_dataset: d.ThesisDataset =
         male_original = dataset.get_original_series_prediction(age_start, age_end, 'male')
         female_original = dataset.get_original_series_prediction(age_start, age_end, 'female')
 
-        print(
-            F"age:{age_start}-{age_end} Original male: {round(male_original, 3)} and female: {round(female_original, 3)}")
+        print(f"{dataset.name}")
+        # print(
+        #     F"age:{age_start}-{age_end} Original male: {round(male_original, 3)} and female: {round(female_original, 3)}")
         # Average method
         average_male, average_female = get_prediction_by_average_of_dimensions(dataset, age_start,
                                                                                age_end)
         male_delta_average, female_delta_average = get_delta_of_prediction(average_male, average_female, male_original,
                                                                            female_original)
-        print(
-            f"age:{age_start}-{age_end} Predictions for average methods are male: {round(average_male, 3)} and female: {round(average_female, 3)}")
+        # print(
+        #     f"age:{age_start}-{age_end} Predictions for average methods are male: {round(average_male, 3)} and female: {round(average_female, 3)}")
         # print(
         #     f"age:{age_start}-{age_end} Delta's for average method are male:{male_delta_average} and female:{female_delta_average}")
 
@@ -122,12 +126,14 @@ def analyze_dataset(file_path: str = None, predefined_dataset: d.ThesisDataset =
             "age_start": age_start,
             "age_end": age_end
         })
-    plot_graph_from_gender(results, 'male', dataset.name)
-    plot_graph_from_gender(results, 'female', dataset.name)
+    plot_graph_from_gender(results, 'male', dataset.name, dataset.disability)
+    plot_graph_from_gender(results, 'female', dataset.name, dataset.disability)
     # plot_female(results)
 
 
-def plot_graph_from_gender(results, gender, dataset_name='unknown dataset'):
+def plot_graph_from_gender(results, gender, dataset_name='unknown dataset', disability="unknown disability"):
+    timestamp = datetime.datetime.now()
+
     age_values = []
     original_line_values = []
     average_line_values = []
@@ -155,24 +161,31 @@ def plot_graph_from_gender(results, gender, dataset_name='unknown dataset'):
 
     fig, ax = plt.subplots()
 
+    original_line, = ax.plot(age_values, original_line_values, label='Original values')
+    original_line.set_color('#4daf4a')
+    # original_line.set_linewidth(3)
+
+    # Plot colors come from https://gist.github.com/thriveth/8560036 (optimal for color-blind)
     average_line, = ax.plot(age_values, average_line_values, label='Average rec. values')
     average_line.set_dashes([4, 2])
-    bias_line, = ax.plot(age_values, bias_line_values, label='Bias rec. values')
-    bias_line.set_dashes([5, 2])
+    average_line.set_color('#377eb8')#ff7f00
+    bias_line, = ax.plot(age_values, bias_line_values, label='Bias rec. values', color='#ff7f00')
+    bias_line.set_dashes([3, 2])
+    bias_line.set_color('#ff7f00')
 
-    original_line, = ax.plot(age_values, original_line_values, label='Original values')
-    original_line.set_linewidth(3)
-    original_line.set_dashes([2,2])
     age_average_line, = ax.plot(age_values, age_average_values, label='Age average')
-    age_average_line.set_dashes([4, 2])
-    gender_average_line, = ax.plot(age_values, gender_male_average_values, label='Gender average')
-    gender_average_line.set_dashes([4, 2])
+    age_average_line.set_dashes([2, 2])
+    age_average_line.set_color('#e41a1c')
+    # original_line.set_dashes([2,1])
+    # gender_average_line, = ax.plot(age_values, gender_male_average_values, label='Gender average')
+    # gender_average_line.set_dashes([4, 2])
 
     ax.legend(handlelength=4)
-    ax.set_title(f"{dataset_name[0:34]}: {gender} predictions")
+    ax.set_title(f"Dataset {dataset_name}\n {gender} estimations for disability {disability}", wrap=True)
     plt.xlabel("Age (in years)")
-    plt.ylabel("Prediction (in %)")
+    plt.ylabel(f"Prevalence estimation (in %)")
     plt.rcParams['lines.linewidth'] = 2
+    plt.savefig(f"output/{timestamp}-{gender}-{dataset_name}.png")
     plt.show()
 
 

@@ -269,6 +269,120 @@
           "proportion": 24
         }
       ]
+    },
+    {      "sector": "General population",
+      "source": "",
+
+      "male_proportion": 50,
+      "female_proportion": 50,
+
+      "series": [
+        {
+          "age_start": 0,
+          "age_end": 4,
+          "proportion": 5
+        },
+        {
+          "age_start": 5,
+          "age_end": 0,
+          "proportion": 5
+        },
+        {
+          "age_start": 10,
+          "age_end": 14,
+          "proportion": 5
+        },
+        {
+          "age_start": 15,
+          "age_end": 19,
+          "proportion": 5
+        },
+        {
+          "age_start": 20,
+          "age_end": 24,
+          "proportion": 5
+        },
+        {
+          "age_start": 25,
+          "age_end": 29,
+          "proportion": 5
+        },
+        {
+          "age_start": 30,
+          "age_end": 34,
+          "proportion": 5
+        },
+        {
+          "age_start": 35,
+          "age_end": 39,
+          "proportion": 5
+        },
+        {
+          "age_start": 40,
+          "age_end": 44,
+          "proportion": 5
+        },
+        {
+          "age_start": 45,
+          "age_end": 49,
+          "proportion": 5
+        },
+        {
+          "age_start": 50,
+          "age_end": 54,
+          "proportion": 5
+        },
+        {
+          "age_start": 55,
+          "age_end": 59,
+          "proportion": 5
+        },
+        {
+          "age_start": 60,
+          "age_end": 64,
+          "proportion": 5
+        },
+        {
+          "age_start": 65,
+          "age_end": 69,
+          "proportion": 5
+        },
+        {
+          "age_start": 70,
+          "age_end": 74,
+          "proportion": 5
+        },
+        {
+          "age_start": 75,
+          "age_end": 79,
+          "proportion": 5
+        },
+        {
+          "age_start": 80,
+          "age_end": 84,
+          "proportion": 5
+        },
+        {
+          "age_start": 85,
+          "age_end": 89,
+          "proportion": 5
+        },
+        {
+          "age_start": 90,
+          "age_end": 94,
+          "proportion": 5
+        },
+        {
+          "age_start": 95,
+          "age_end": 99,
+          "proportion": 5
+        },
+        {
+          "age_start": 100,
+          "age_end": 104,
+          "proportion": 5
+        }
+      ]
     }
     ]
 }

@@ -1,6 +1,6 @@
 {
-  "id": "d4",
-  "name": "(2018) Gebruik Zvw-zorg voor zintuiglijk gehandicapten 2018",
+  "id": "rec_d4",
+  "name": "rec_(2018) Gebruik Zvw-zorg voor zintuiglijk gehandicapten 2018",
   "link": "https://mlzopendata.cbs.nl/#/MLZ/nl/dataset/40054NED/table?dl=77D22",
   "disability": "visual impairment",
   "series": [
@@ -32,7 +32,7 @@
       "age_start": 70,
       "age_end": 74,
       "gender": "male",
-      "proportion": 0.17
+      "proportion": 0.165
     },
     {
       "age_start": 75,
@@ -44,19 +44,19 @@
       "age_start": 80,
       "age_end": 84,
       "gender": "male",
-      "proportion": 0.36
+      "proportion": 0.38
     },
     {
       "age_start": 85,
       "age_end": 89,
       "gender": "male",
-      "proportion": 0.57
+      "proportion": 0.601
     },
     {
       "age_start": 90,
       "age_end": 100,
       "gender": "male",
-      "proportion": 0.76
+      "proportion": 0.741
     },
 
     {
@@ -87,7 +87,7 @@
       "age_start": 70,
       "age_end": 74,
       "gender": "female",
-      "proportion": 0.16
+      "proportion": 0.165
     },
     {
       "age_start": 75,
@@ -99,19 +99,19 @@
       "age_start": 80,
       "age_end": 84,
       "gender": "female",
-      "proportion": 0.40
+      "proportion": 0.38
     },
     {
       "age_start": 85,
       "age_end": 89,
       "gender": "female",
-      "proportion": 0.63
+      "proportion": 0.599
     },
     {
       "age_start": 90,
       "age_end": 100,
       "gender": "female",
-      "proportion": 0.72
+      "proportion": 0.739
     }
   ]
 }
